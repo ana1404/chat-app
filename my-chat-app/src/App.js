@@ -8,6 +8,7 @@ function App() {
 
   const [msg, setMsg] = useState([]);
   
+  //Connect to room
   useEffect(() => {
     room.on('open', error => {
       if (error) {
@@ -16,9 +17,7 @@ function App() {
         console.log('Connected to room');
       }
     });
-  }, [])
 
-  useEffect(() => {
     //ovo je prijašnja fukcija PRIMI
     room.on('message', message => {
       setMsg(preState => {
@@ -26,7 +25,8 @@ function App() {
        });
     });
     //ovo je prijašnja fukcija PRIMI
-  }, [msg])
+  }, [])
+
 
   function posalji(value) {
     //console.log(value)
@@ -38,16 +38,16 @@ function App() {
   }
 
   function diskonekt() {
-    console.log("izašao")
-    room.unsubscribe();
+    console.log("izašao");
     drone.close();
+    //room.unsubscribe();   trenutno izbacuje error
   }
 
   return (
     <>
       <input type="text" id="input" placeholder="Upiši poruku..."></input>
       <button onClick={()=> posalji(document.getElementById("input").value)}>Send</button>
-      <button onClick={() => diskonekt}>Disconnect</button>
+      <button onClick={() => diskonekt()}>Disconnect</button>
       {msg.map((poruka, index) => { return <p key={index} id={index}>{poruka}</p>})}
     </>
   );
