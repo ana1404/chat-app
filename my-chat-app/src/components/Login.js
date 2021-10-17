@@ -1,18 +1,28 @@
 import React, { useState } from "react";
-import { slika1, slika2, slika3 } from "./Avatar.js";
-
+import {
+  slika1,
+  slika10,
+  slika11,
+  slika2,
+  slika3,
+  slika4,
+  slika5,
+  slika6,
+  slika7,
+  slika8,
+  slika9,
+} from "./Avatar.js";
 
 const Login = () => {
-
   const izaberiAvatar = (chosenAvatar) => {
     console.log(chosenAvatar.target.src);
   };
 
   const disableAvatar = (checkBox) => {
-      if (checkBox.target.checked === true) {
-        console.log("checkbox je kliknut")
+    if (checkBox.target.checked === true) {
+      console.log("checkbox je kliknut");
       //disable container avatars
-        document.getElementById("img-container").hidden = true;
+      document.getElementById("img-container").hidden = true;
     }
   };
 
@@ -21,10 +31,10 @@ const Login = () => {
   };
 
   return (
-    <form>
-      <div className="form-inner">
+    <form >
+      <div className="form-wraper">
         <h2>Login</h2>
-        <div className="form-group">
+        <div className="form-name">
           <label htmlFor="name"></label>
           <input
             type="text"
@@ -34,7 +44,7 @@ const Login = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-choose-avatar">
           <label htmlFor="avatar">Choose avatar:</label>
         </div>
         <div className="form-group">
@@ -48,12 +58,12 @@ const Login = () => {
           />
           <div id="img-container">
             <img
-              src="https://img.icons8.com/emoji/50/000000/woman-superhero.png"
+              src={slika4}
               alt="woman-superhero"
               id="woman-superhero"
               onClick={(e) => izaberiAvatar(e)}
-                      />
-           {/*        
+            />
+
             <img
               src={slika1}
               alt="capten-superhero"
@@ -71,85 +81,74 @@ const Login = () => {
               alt="hulk"
               id="hulk"
               onClick={(e) => izaberiAvatar(e)}
-                      />
-                      */}  
+            />
+
             <img
-              src="https://img.icons8.com/color/48/000000/thor.png"
+              src={slika5}
               alt="thor"
               id="thor"
               onClick={(e) => izaberiAvatar(e)}
             />
             <img
-              src="https://img.icons8.com/emoji/48/000000/man-superhero.png"
+              src={slika6}
               alt="man-superhero"
               id="man-superhero"
               onClick={(e) => izaberiAvatar(e)}
             />
             <img
-              src="https://img.icons8.com/color/48/000000/deadpool.png"
+              src={slika7}
               alt="deadpool"
               onClick={(e) => izaberiAvatar(e)}
               id="deadpool"
             />
+
             <img
-              src="https://img.icons8.com/color/48/000000/hulk.png"
-              alt="hulk"
-              onClick={(e) => izaberiAvatar(e)}
-              id="hulk"
-            />
-            <img
-              src="https://img.icons8.com/color/48/000000/wonder-woman.png"
+              src={slika8}
               alt="wonder-woman"
               onClick={(e) => izaberiAvatar(e)}
               id="wonder-woman"
             />
+
             <img
-              src="https://img.icons8.com/color/48/000000/black-widow.png"
-              alt="black-widow"
-              id="black-widow"
-              onClick={(e) => izaberiAvatar(e)}
-            />
-            <img
-              src="https://img.icons8.com/doodle/48/000000/iron-man.png"
+              src={slika9}
               alt="iron-man"
               id="iron-man"
               onClick={(e) => izaberiAvatar(e)}
             />
             <img
-              src="https://img.icons8.com/color/48/000000/mystique.png"
+              src={slika10}
               alt="mystique"
               id="mystique"
               onClick={(e) => izaberiAvatar(e)}
             />
             <img
-              src="https://img.icons8.com/color/48/000000/professor-x.png"
+              src={slika11}
               alt="professor-x"
               id="professor-x"
               onClick={(e) => izaberiAvatar(e)}
             />
-            <img
-              src="https://img.icons8.com/color/48/000000/groot.png"
-              alt="groot"
-              id="groot"
-              onClick={(e) => izaberiAvatar(e)}
-            />
-            <img
-              src="https://img.icons8.com/color/48/000000/storm-marvel.png"
-              alt="storm-marvel"
-              id="storm-marvel"
-              onClick={(e) => izaberiAvatar(e)}
-            />
           </div>
               </div>
-        <input
+              
+              <div className="form-checkbox">
+              <input
           type="checkbox"
           name="checkbox"
           id="checkbox"
           onChange={(e) => disableAvatar(e)}
-              />
-              <span>Odaberi random boju umjesto avatara </span>
-        <button type="submit" onClick={handleSubmit}>
-          Login
+        />
+                  <span>Randomize name and color</span>
+                  <select className="room-select" name="room" required>
+                  <option value >Choose room</option>
+                  <option value="general">General</option>
+                  <option value="pets">Pets</option>
+                  <option value="family">Family</option>
+                  <option value="technology">Technology</option>
+              </select>
+       
+              </div>
+              <button id="btn-start" type="submit" onClick={handleSubmit}>
+          Start chat
         </button>
       </div>
     </form>
