@@ -10,6 +10,8 @@ import ironMan from "../img/icons8-iron-man-48.png";
 import mystique from "../img/mystique.png";
 import profX from "../img/icons8-professor-x-48.png";
 
+import female from "../img/icons8-female-profile-64.png"
+
 export const slika1 = captenAmerica;
 export const slika2 = blackWidow;
 export const slika3 = hulk;
@@ -21,3 +23,4 @@ export const slika8 = wonderWomen;
 export const slika9 = ironMan;
 export const slika10 = mystique;
 export const slika11 = profX;
+export const img1 = female

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rooms = () => {
+const Rooms = (props) => {
   return (
     <div className="chat-wraper">
       <div className="chat-header">
@@ -9,14 +9,15 @@ const Rooms = () => {
           src="https://img.icons8.com/bubbles/50/000000/menu.png"
         />
         <h1>
-          Welcome in chat room - <span>pets</span>
+          Welcome in chat room - <span>{props.data.room}</span>
         </h1>
       </div>
       <div className="onlineMembers-container">
         <span>Online: </span>
         <ul className="ul-members">
           <li className="li-members">
-            img <span>name</span>
+            <img src={props.data.avatar} alt="" />
+            <span>{props.data.name}</span>
           </li>
         </ul>
       </div>

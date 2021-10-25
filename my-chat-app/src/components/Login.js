@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import {
+  img1,
   slika1,
   slika10,
   slika11,
@@ -13,9 +15,15 @@ import {
   slika9,
 } from "./Avatar.js";
 
-const Login = () => {
+const Login = (props) => {
+
+    const history = useHistory();
+    let icon = "noAvatar"
+
+
   const izaberiAvatar = (chosenAvatar) => {
-    console.log(chosenAvatar.target.src);
+    console.log(chosenAvatar);
+      icon = chosenAvatar.target.src;
   };
 
   const disableAvatar = (checkBox) => {
@@ -26,13 +34,20 @@ const Login = () => {
     }
   };
 
-  const handleSubmit = () => {
-    console.log("handleSubmit");
+  const handleSubmit = (para) => {
+    //console.log("handleSubmit");
+      para.preventDefault();
+      props.setData({
+          name: document.getElementById("name").value,
+          avatar: icon,
+          room: document.getElementById("room-select").value
+      });
+      history.push("/room");
   };
 
   return (
-    <form >
-      <div className="form-wraper">
+    <div className="pozadina">
+      <form className="form-wraper">
         <h2>Login</h2>
         <div className="form-name">
           <label htmlFor="name"></label>
@@ -58,7 +73,7 @@ const Login = () => {
           />
           <div id="img-container">
             <img
-              src={slika4}
+              src={img1}
               alt="woman-superhero"
               id="woman-superhero"
               onClick={(e) => izaberiAvatar(e)}
@@ -128,30 +143,29 @@ const Login = () => {
               onClick={(e) => izaberiAvatar(e)}
             />
           </div>
-              </div>
-              
-              <div className="form-checkbox">
-              <input
-          type="checkbox"
-          name="checkbox"
-          id="checkbox"
-          onChange={(e) => disableAvatar(e)}
-        />
-                  <span>Randomize name and color</span>
-                  <select className="room-select" name="room" required>
-                  <option value >Choose room</option>
-                  <option value="general">General</option>
-                  <option value="pets">Pets</option>
-                  <option value="family">Family</option>
-                  <option value="technology">Technology</option>
-              </select>
-       
-              </div>
-              <button id="btn-start" type="submit" onClick={handleSubmit}>
+        </div>
+
+        <div className="form-checkbox">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            onChange={(e) => disableAvatar(e)}
+          />
+          <span>Randomize name and color</span>
+          <select id="room-select" name="room" required>
+            <option value>Choose room</option>
+            <option value="general">General</option>
+            <option value="pets">Pets</option>
+            <option value="family">Family</option>
+            <option value="technology">Technology</option>
+          </select>
+        </div>
+        <button id="btn-start" type="submit" onClick={(e) => handleSubmit(e)}>
           Start chat
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 export default Login;
