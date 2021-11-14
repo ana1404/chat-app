@@ -1,22 +1,21 @@
 import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Rooms from "./components/Rooms";
 import Login from "./components/Login";
 import "./style/App.css";
 
 function App() {
 
-  const [log, setLog] = useState([]);
+  const [log, setLog] = useState([]); //{name, avatar, room}
+  let array = [];
 
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Login setData={ setLog }/>
+          <Login setLog={setLog}/>
         </Route>
         <Route path="/room">
-          <Navbar />
           <Rooms data={ log }/>
         </Route>
       </Switch>
