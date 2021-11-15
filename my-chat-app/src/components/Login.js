@@ -87,7 +87,6 @@ const Login = (props) => {
 
   //svaki odabir avatara ili reodabir avatara postavlja avatar ili ga resetira
   useEffect(() => {
-    console.log(avatar);
     if (avatar[avatar.length - 1] !== "noAvatar") {
       setDisable(true); //postavlja switch na disable
     }
@@ -103,7 +102,6 @@ const Login = (props) => {
 
   //postavljanje switcha na true ili false, postavlja avatar i inpt na disable
   useEffect(() => {
-    console.log(checked);
     if (checked === true) {
       disableAvatar();
       document.getElementById("name").disabled = true;

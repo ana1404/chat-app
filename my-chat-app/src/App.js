@@ -7,7 +7,7 @@ import "./style/App.css";
 function App() {
 
   const [log, setLog] = useState([]); //{name, avatar, room}
-  let array = [];
+  const [arrOnlineUsers, setArrOnlineUsers] = useState([])
 
   return (
     <Router>
@@ -16,7 +16,7 @@ function App() {
           <Login setLog={setLog}/>
         </Route>
         <Route path="/room">
-          <Rooms data={ log }/>
+          <Rooms log={log} arrOnlineUsers={arrOnlineUsers} setArrOnlineUsers={ setArrOnlineUsers}/>
         </Route>
       </Switch>
     </Router>
