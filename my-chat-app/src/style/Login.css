@@ -1,0 +1,177 @@
+ /*Login*/
+  .pozadina {
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-switch-LD{
+    position: absolute;
+    top: 100px;
+  }
+  
+  .form-wraper {
+    height: 500px;
+    flex-basis: 288px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  h2 {
+    display: flex;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    flex-basis: 100%;
+    height: 5%;
+    justify-content: center;
+  }
+  
+  .form-name {
+    flex-basis: 80%;
+    padding: 10px;
+  }
+  .form-name input{
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                0 0 25px #fff;
+    background-color:transparent;
+  }
+  
+  .form-name input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 5px #fff,
+                0 0 25px #fff;
+  }
+  .form-name input:focus + label[placeholder]:before {
+    color: #fff;
+  }
+  .form-name input:focus + label[placeholder]:before,
+  .form-name input:valid + label[placeholder]:before {
+    transition-duration: .2s;
+    transform: translate(0, -1.8em) scale(0.9, 0.9);
+  }
+  
+  .form-name input:invalid + label[placeholder][alt]:before {
+    content: attr(alt);
+  }
+  
+  .form-name input + label[placeholder] {
+    display: block;
+    pointer-events: none;
+    line-height: 1em;
+    transform: translate(-3.3em, 0);
+    margin-top: calc(-1.5em - 1px);
+    margin-bottom: calc((3em - 1em) + 2px);
+  }
+  
+  .form-name input + label[placeholder]:before {
+    content: attr(placeholder);
+    display: inline-block;
+    margin: 0 calc(0.5em + 2px);
+    padding: 0 2px;
+    color: #898989;
+    white-space: nowrap;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(to bottom, black, black);
+    background-size: 100% 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /*-----------------*/
+  
+  .form-choose-avatar {
+    color: white;
+  }
+  
+  #img-container {
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  
+#img-container img:hover{
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+    color: #fff;
+  }
+  .form-checkbox {
+    color: black;
+    margin-top:10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /* BUTTON */
+  .form-wraper button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background: rgba(0,0,0,.5);
+    border:0;
+    margin-bottom: 20px;
+  }
+  
+  .form-wraper button:hover {
+    background: #ff4a55;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff4a55,
+                0 0 25px #ff4a55;
+  }
+  /*BUTTON*/
+
+  .form-checkbox span {
+    padding-left: 2px;
+    color: white;
+  }
+  
+  #checkbox {
+    margin: 5px;
+  }
+  
+  #room-select {
+    margin: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,.5);
+    border:0;
+  }
+  #room-select option{
+    background: rgba(0,0,0,.95);
+  }
+  #room-select:focus{
+    box-shadow: 0 0 5px #fff;
+    transition: 0.3s ease-out;
+  }

@@ -1,0 +1,176 @@
+/*Rooms*/
+.chat-wraper {
+    height: 90%;
+    flex-basis: 480px;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  }
+  
+  .chat-header {
+    background-color:#5b5377;
+    color: white;
+    height: 5%;
+    flex-basis: 100%;
+    align-items: center;
+    display: flex;
+    padding-top: 15px;
+  }
+  .chat-header h1 {
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+  }
+  #menu-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .onlineMembers-container {
+    display: flex;
+    height: 5%;
+    flex-flow: row wrap;
+    flex-basis: 100%;
+    background: #6b628d;
+    color: white;
+    border: 0;
+  }
+  .ul-members {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    list-style: none;
+  }
+  .ul-members li{
+    flex-basis: 30%;
+    margin-right: 25px;
+  }
+  .ul-members li::before{
+    content: '\2022';
+    font-size: 1.5em;
+  color: lime;
+  padding: 10px;
+  margin-left: -25px;
+  text-shadow: 1px 1px 5px lime,
+                1px 1px 25px lime,
+                1px 1px 55px lime;
+  }
+  
+  /*------------------PORUKE -----------------------*/
+  #msg-list {
+    height: 82%;
+    flex-basis: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  #msg-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#msg-list::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+#msg-list::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
+}
+  .bubbleWrapper {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-self: flex-end;
+    color: #fff;
+  }
+  .inlineContainer {
+    display: inline-flex;
+  }
+  .inlineContainer.own {
+    flex-direction: row-reverse;
+  }
+  .inlineIcon {
+    width:60px;
+    object-fit: contain;
+  }
+  .ownBubble {
+    min-width: 60px;
+    max-width: 700px;
+    padding: 14px 18px;
+    margin: 6px 8px;
+    background-color: #5b5377;
+    border-radius: 16px 16px 0 16px;
+    border: 1px solid #443f56;
+   
+  }
+  .otherBubble {
+    min-width: 60px;
+    max-width: 700px;
+    padding: 14px 18px;
+    margin: 6px 8px;
+    background-color: #6C8EA4;
+    border-radius: 16px 16px 16px 0;
+    border: 1px solid #54788e;
+    
+  }
+  .own {
+    align-self: flex-end;
+  }
+  .other {
+    align-self: flex-start;
+  }
+  span.own,
+  span.other{
+    font-size: 14px;
+    color: grey;
+  }
+  
+  /*-----------------------PORUKE----------------------*/
+  .chat-input {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 5.5%;
+    padding-bottom: 20px;
+  }
+  .chat-input input{
+    border: 0;
+    height: 70%;
+    flex-basis: 80%;
+    border-bottom: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    color: #fff;
+    background-color:transparent;
+  }
+  .chat-input button {
+    flex-basis: 5%;
+  }
+  #btn-send-msg {
+    flex-basis: 5%;
+    background: transparent url("../img/paper-plane-64.png") center center/contain no-repeat;
+    border:0;
+  }
+  #btn-send-msg:hover{
+    background: transparent url("../img/paper-plane-64_1.png") center center/contain no-repeat;
+  }
+  #text-msg {
+    flex-basis: 80%;
+  }
+  #emojiBtn{
+    background: transparent url("../img/happy-64.png") center center/contain no-repeat;
+    border: 0;
+  }
+  #emojiBtn:hover{
+    background: transparent url("../img/happy-64_1.png") center center/contain no-repeat;
+  }
+  #pick{
+    position: fixed;
+    bottom: 100px;
+    right: 46%;
+  }

@@ -1,0 +1,77 @@
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0 5px 10px;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+.navbar{
+  position: fixed;
+}
+.nav-menu {
+  position: absolute;
+  left: -200px;
+  top: 36px;
+  gap: 0;
+  flex-direction: column;
+  background-color: #262626;
+  width: 180px;
+  text-align: center;
+  transition: 0.3s;
+  opacity: 0;
+  padding: 0%;
+  display: flex;
+}
+
+.nav-item {
+  display: flex;
+  height: 50px;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item:hover {
+  color: #606468;
+}
+.nav-item div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: white;
+  transition: 0.7s ease;
+}
+.nav-item div:hover {
+  color: yellow;
+  background: #606468;
+  cursor: pointer;
+}
+.nav-menu.active{
+  top: 36px;
+  left: 0;
+  opacity: 1;
+}
+.nav-menu option{
+  justify-content: center;
+  align-items: center;
+}
+.nav-menu option:hover {
+  color: yellow;
+  background: #606468;
+  cursor: pointer;
+}
